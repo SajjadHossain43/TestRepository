@@ -1,0 +1,127 @@
+** TribaLex Dec-6 Criminal Module Change****
+
+1-In Plea Agreement the Attorney Signature been removed and it’s getting the Signature from the User Profile associated to that Attorney 
+2- New Option added to Jurisdiction Determination   Non US Citizen this Option will be treated like Indian 
+3-When Create a new Criminal Complaint for a new defendant => save will redirect to a new Page to List all the possible defendant duplication (First Name, Last Name) along with data entered so the user will have the option even to continue with the new Defendant or go with one of the existing Defendant 
+3-When Create a new Citation Case for a new defendant => save will redirect to a new Page to List all the possible defendant duplication (First Name, Last Name) along with data entered so the user will have the option even to continue with the new Defendant or go with one of the existing Defendant 
+
+4- Criminal Citation Integration with the Criminal side
+5-Redesign the Defendant heard to show the count for each cases sections and List the infraction traffic cases
+6-Mnage Criminal Cases to show the Ple type List depend on the Case Type PV, SOC, and CR you should see only Criminal Plea Types,  For Criminal Citation Cases you should see all plea type Criminal Plea Types and Citation Plea Types, all Pages Plea Agreement, Judgments, Amend Judgment , and  Dismissals you will see Criminal Plea Types only Regardless if case is CR, PV, SOC or even Criminal Citation
+
+7-Manange Citation Cases show the Ple type List depend on the Citation Type Infraction cases you should see only Citation Plea Types,  For Criminal Citation Cases you should see all plea types  Criminal Plea Types and Citation Plea Types.
+
+8-Add Subpoenas, Garnishments, PV Judgment Certificate of Compliances to delete Defendant Records from the Admin side
+
+9- In PV Judgment Changes 
+a-List only Active PVs 
+b-make all Dates on PV Judgment to show future and past dates  
+c-After sealing the PV Judgment, it will inactivate all PVs Always Plea Type Will be Admitted Un less  [Upon due notice of the alleged violation(s”] section is selected the plea type will be Dismissed Other 
+10- Those Pages will based on Privilege 
+-CR Docket List 
+-DV Docket List 
+-Minutes Add/Edit and View
+-FS Docket List 
+-Minutes Add/Edit and View 
+-MV Docket List 
+-Minutes Add/Edit and View 
+-Jury Docket List 
+-Minutes Add/Edit and View
+
+11- Remove the Printed date, time and page number from the following reports (Remove the footer)
+12- If the selected offense code is 20-138.1 then add disclaimer language at the end of the report  'This is not a charging document.
+13- Active CRs with No Court Dates Report =>  show the enrollment number of the defendant if exist, if not get the SSN and when the SSN is displayed Mask the first 5 digit (example: XXX-XX-0040)
+14- In Judgment Defense attorney drop down it will list only the assigned attorneys for that defendant
+15-All Court Garnishment New Fields 4 checkboxes and 4 numeric fields  (UI and Printable Report)
+-Heart to Heart Fine 
+-Domestic Violence Fine
+-Drug Testing 
+-Attorney’s Fee
+b-On Add =>  Finance Garnish Fee will have a default value => $35   
+c-On Add =>  Court Garnish Fee will have a default value => $20
+d- Add new option Report Check to the Court Type List
+       e-Match the Printable report with the PDF
+16-Defendant Garnishment New Fields 4 checkboxes and 4 numeric fields (UI and Printable Report)
+-Heart to Heart Fine 
+-Domestic Violence Fine
+-Drug Testing 
+-Attorney’s Fee
+
+b-On Add =>  Finance Garnish Fee will have a default value => $35   
+c-On Add =>  Court Garnish Fee will have a default value => $20
+       d-Match the Printable report with the PDF
+
+17 – Make both All Court Garnishment and Defendant Garnishment based on privilege 
+18- Remove the empty option from the Plea Agreement, Judgment Plea Type dropdown
+19- In Ple Agreement Defense attorney drop down it will list only the assigned attorneys for that defendant
+20-Two Checkboxes removed from Criminal Record Background check report (Also from Empty Report)
+21- New Columns to the Certificate of Compliance List (Officer name, Type of Discovery, How Delivered )
+22-Add a new option to the Document Type dropdown “None”, for 
+-Complaint  Documents 
+-Defendant documents 
+-Prosecutor documents
+23- Implement the Document Sharing for the Defendant Documents
+24-All Seach pages will be based on Privilege (if the user don’t have the privilege for one of the search pages this search will not show to that user)
+25- New Search Probation Search 
+-Type: Supervised; Unsupervised; All 
+-Defendant Name 
+-File Number 
+-Date  
+26- In search pages when navigating back, preserve prior search fields and results. 
+27- Case Search 
+-add Attorney to Criteria and Result
+-add two new option to the Type dropdown [Judgment CR],[Stayed CR] 
+28- Add Prosecutor Notes to the CR Docket 
+	Allow the Prosecutor to enter the notes directly from the CR Docket 
+	Every Note will automatically create a record on the OPT Notes page
+	 BE SURE : every time you adding a new note it should be though a pop-up screen and main page should not change or change the result 
+29- All notes Crated by Prosecutor should show on the Docket report 
+30- Search Warrant New Workflow 
+-The PD (CIPD/ALE/Marshal) creates the initial Search Warrant. 
+Only this specific  CIPD Can see this Search Warrant
+-The PD Submit to the PD Supervisor for Reviewed or Rejection or Rollback. 
+Only this specific CIPD and PD Supervisor Can see this Search Warrant
+-If Rejected the Search warrant will end here
+-If Rollback the PD Supervisor will enter some notes and PD Will Submitted again to the PD Supervisor 
+-If PD Supervisor Reviewed, he/she will submit to a specific Prosecutor 
+Only this specific CIPD ,PD Supervisor and Prosecutor Can see this Search Warrant
+-The Prosecutor reviews and marks the application as 'Reviewed by Prosecutor,' sending it back to the PD drafter and PD Supervisor.
+-CIPD od PD Supervisor will submits the SW application to a Judicial Official (Magistrate /Judge).
+-Judicial Official receives the application and decides:
+*If a magistrate is specified by PD drafter/Supervisor, only that person and all judges get notified and can review.
+If a judge is specified by PD drafter/Supervisor, any judge get notified and can review.
+-Judicial Official signs and decides to Issue, Issue with Seal, or Decline the SW.
+-The SW is restricted to PD drafter, PD supervisor, prosecutor, and the judicial official till now.
+-If  Magistrate /Judge  Decision Is Issue all can see this Search Warrant Otherwise only Users Involved Can see this Search Warrant 
+-When the PD selects the third option in the return of service page, then the Clerk will get a notification in their dashboard and can acknowledge.
+-After acknowledgment it will remove from the widget and Clerk Acknowledgment will be visible to the SW page.
+
+31- New Widgets
+-Search Warrant Awaiting Submission Widget 
+-Search Warrant Awaiting Review Widget
+-Search Warrant Awaiting Signature Widget
+-Search Warrant Issued In Last 90Days Widget
+-Recently Signed PV Judgement Widget
+-Search Warrant Not Served In Last 10Days Widget
+-Outstanding Search Warrants Widget
+-Recently Issued Search Warrants Widget
+-Recently Rejected Search Warrants Widget
+-Rolledback Search Warrant Widget
+-Recently Rejected Search Warrants By The PD Supervisor Widget
+-Search Warrants Awaiting Submission to PD Supervisor Widget
+-Search Warrants Awaiting Review by PD Supervisor Widget
+-Search Warrants Awaiting Clerk Acknowledgment Widget
+32- Dashboard will tabs now will display the total count for each section not the record count of the first widget
+33- The Notice of hearing Has many issues and poorly done, it been fixed and need to be tested as a new feature 
+34- Add Criminal Citation Cases to the Defendant Tile Line 
+
+
+** TribaLex Dec-6 FS Module Change****
+35-Ability to bulk upload DV case and complaint documents. 
+36-DV Case Search – Status drop down default to Open & Closed  
+37-All the DV features (PAges) based on the Privilege 
+
+
+** TribaLex Dec-6 FS Module Change****
+38-Ability to bulk upload FS case documents. Allow the user to select multiple documents that needs to be uploaded at the same time. Same as what we have in the CR module document page. (Sajad) 
+39-Restrict FS module access to all the users other than Clerks/judges/FS Attorney.
